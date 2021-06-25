@@ -2,19 +2,26 @@ package EstructuraDatos;
 
 public class Arbol {
     private Nodo raiz;
+    private int niveles;
     private int cantidadVertices;
 
     public Arbol(){
         raiz = null;
     }
 
-    public void insertar(Nodo nodo){
-        if(nodo.getNivel() == 0){
+    public void insertar(int nivel, Nodo nodo){
+        if(cantidadVertices == 0){
             raiz = nodo;
+            raiz.setNivel(0);
+            raiz.setPadre(null);
             cantidadVertices++;
+            niveles++;
         }else{
-            Nodo temp = raiz;
-
+            //
         }
+    }
+
+    public int cuentaHijos(Nodo nodo){
+        return 0;
     }
 }
