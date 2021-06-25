@@ -14,6 +14,6 @@ public class Prueba {
         arbol.insertar(2, nodo3);
 
         arbol.imprimir();
-        //System.out.println(arbol.getRaiz().getDerecho().getDato());
+        System.out.println("Cantidad de nodos "+arbol.getCantidadVertices());
     }
 }

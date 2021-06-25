@@ -10,12 +10,10 @@ public class Arbol {
     }
 
     public void insertar(int nivel, Nodo nodo){
-        if(cantidadVertices == 0){
+        if(raiz == null){
             raiz = nodo;
             raiz.setNivel(nivel);
             raiz.setPadre(null);
-            cantidadVertices++;
-            niveles++;
         }else{
             Nodo temp = raiz;
             while(temp != null){
@@ -23,16 +21,18 @@ public class Arbol {
                     nodo.setPadre(raiz);
                     nodo.setNivel(nivel);
                     raiz.setIzquierdo(nodo);
-                    niveles++;
+                    
+                    System.out.println("ENTRO IZQ");
                 }else{
                     nodo.setPadre(raiz);
                     nodo.setNivel(nivel);
                     raiz.setDerecho(nodo);
-                    niveles++;
+                    System.out.println("ENTRO DER");
                 }
                 temp = temp.getIzquierdo();
             }
         }
+        cantidadVertices++;
     }
 
     public void imprimir(){
@@ -52,4 +52,7 @@ public class Arbol {
         this.raiz = nodo;
     }
 
+    public int getCantidadVertices(){
+        return cantidadVertices;        
+    }
 }
