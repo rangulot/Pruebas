@@ -14,21 +14,22 @@ public class Arbol {
             raiz = nodo;
             raiz.setNivel(nivel);
             raiz.setPadre(null);
+            System.out.println("ENTRO RAIZ");
         }else{
             Nodo temp = raiz;
             while(temp != null){
                 if(temp.getIzquierdo() == null){
-                    nodo.setPadre(raiz);
+                    nodo.setPadre(temp);
                     nodo.setNivel(nivel);
-                    raiz.setIzquierdo(nodo);
-                    
-                    System.out.println("ENTRO IZQ");
+                    temp.setIzquierdo(nodo);
+                    temp = temp.getIzquierdo();
                 }else{
-                    nodo.setPadre(raiz);
+                    nodo.setPadre(temp);
                     nodo.setNivel(nivel);
-                    raiz.setDerecho(nodo);
-                    System.out.println("ENTRO DER");
+                    temp.setDerecho(nodo);
+                    temp = temp.getDerecho();
                 }
+                System.out.println("NODO DATO = "+temp.getDato());
                 temp = temp.getIzquierdo();
             }
         }
@@ -40,7 +41,15 @@ public class Arbol {
         while(temp != null){
             System.out.println("Nivel"
                                 +"\n"+temp.getNivel());
-            temp = temp.getIzquierdo();
+            if(temp.getIzquierdo() != null){
+                temp = temp.getIzquierdo();
+                System.out.println("IZQ");
+            }else if(temp.getDerecho() != null) {
+                temp = temp.getDerecho();
+                System.out.println("DER");
+            }else{
+                temp = raiz;
+            }
         }
     }
 
