@@ -13,13 +13,12 @@ public class Prueba {
         nodo2.setNivel(1);
         nodo3.setNivel(1);
 
-        nodo1.setHijo(nodo2);
         nodo2.setPadre(nodo1);
         nodo3.setPadre(nodo1);
 
         arbol.insertar(nodo1);
         arbol.insertar(nodo2);
 
-        
+
     }
 }

@@ -3,7 +3,6 @@ package EstructuraDatos;
 public class Nodo {
     private Object dato;
     private Nodo padre;
-    private Nodo hijo;
     private Nodo izquierdo;
     private Nodo derecho;
     private int nivel;
@@ -11,7 +10,6 @@ public class Nodo {
     public Nodo(Object dato){
         this.dato = dato;
         padre = null;
-        hijo = null;
     }
 
     public Object getDato(){
@@ -30,12 +28,20 @@ public class Nodo {
         this.padre = nodo;
     }
 
-    public Nodo getHijo(){
-        return this.hijo;
+    public Nodo getIzquierdo(){
+        return this.izquierdo;
     }
 
-    public void setHijo(Nodo nodo){
-        this.hijo = nodo;
+    public void setIzquierdo(Nodo nodo){
+        this.izquierdo = nodo;
+    }
+
+    public Nodo getDerecho(){
+        return this.derecho;
+    }
+
+    public void setDerecho(Nodo nodo){
+        this.derecho = nodo;
     }
 
     public int getNivel(){
