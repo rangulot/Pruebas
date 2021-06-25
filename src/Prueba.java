@@ -11,8 +11,9 @@ public class Prueba {
 
         arbol.insertar(0, nodo1);
         arbol.insertar(1, nodo2);
-        arbol.insertar(1, nodo3);
+        arbol.insertar(2, nodo3);
 
-        System.out.println(arbol.getRaiz().getDerecho().getDato());
+        arbol.imprimir();
+        //System.out.println(arbol.getRaiz().getDerecho().getDato());
     }
 }
