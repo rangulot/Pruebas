@@ -14,7 +14,6 @@ public class Arbol {
             raiz = nodo;
             raiz.setNivel(nivel);
             raiz.setPadre(null);
-            System.out.println("ENTRO RAIZ");
         }else{
             Nodo temp = raiz;
             while(temp != null){
@@ -29,7 +28,6 @@ public class Arbol {
                     temp.setDerecho(nodo);
                     temp = temp.getDerecho();
                 }
-                System.out.println("NODO DATO = "+temp.getDato());
                 temp = temp.getIzquierdo();
             }
         }
@@ -38,18 +36,12 @@ public class Arbol {
 
     public void imprimir(){
         Nodo temp = raiz;
+
+        //RAMA IZQUIERDA
         while(temp != null){
-            System.out.println("Nivel"
-                                +"\n"+temp.getNivel());
-            if(temp.getIzquierdo() != null){
-                temp = temp.getIzquierdo();
-                System.out.println("IZQ");
-            }else if(temp.getDerecho() != null) {
-                temp = temp.getDerecho();
-                System.out.println("DER");
-            }else{
-                temp = raiz;
-            }
+            System.out.println("Nivel = "+temp.getNivel());
+            System.out.println("DATO = "+temp.getDato());
+            temp = temp.getIzquierdo();
         }
     }
 
