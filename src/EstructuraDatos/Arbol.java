@@ -16,10 +16,24 @@ public class Arbol {
             raiz.setPadre(null);
             cantidadVertices++;
             niveles++;
+        }else if(raiz.getIzquierdo() == null){
+            nodo.setPadre(raiz);
+            raiz.setIzquierdo(nodo);
         }else{
-            //
+            nodo.setPadre(raiz);
+            raiz.setDerecho(nodo);
         }
     }
+
+    public Nodo getRaiz(){
+        return raiz;
+    }
+
+    public void setRaiz(Nodo nodo){
+        this.raiz = nodo;
+    }
+
+    
 
     public int cuentaHijos(Nodo nodo){
         return 0;
