@@ -16,12 +16,18 @@ public class Arbol {
             raiz.setPadre(null);
             cantidadVertices++;
             niveles++;
-        }else if(raiz.getIzquierdo() == null){
-            nodo.setPadre(raiz);
-            raiz.setIzquierdo(nodo);
         }else{
-            nodo.setPadre(raiz);
-            raiz.setDerecho(nodo);
+            Nodo temp = raiz;
+            while(temp != null){
+                if(temp.getIzquierdo() == null){
+                    nodo.setPadre(raiz);
+                    raiz.setIzquierdo(nodo);
+                }else{
+                    nodo.setPadre(raiz);
+                    raiz.setDerecho(nodo);
+                }
+                temp = temp.getIzquierdo();
+            }
         }
     }
 
@@ -33,7 +39,7 @@ public class Arbol {
         this.raiz = nodo;
     }
 
-    
+
 
     public int cuentaHijos(Nodo nodo){
         return 0;
