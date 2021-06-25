@@ -19,5 +19,7 @@ public class Prueba {
 
         arbol.insertar(nodo1);
         arbol.insertar(nodo2);
+
+        
     }
 }
