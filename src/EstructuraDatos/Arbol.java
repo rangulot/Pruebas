@@ -35,13 +35,23 @@ public class Arbol {
     }
 
     public void imprimir(){
-        Nodo temp = raiz;
+        System.out.println("NIVEL = "+raiz.getNivel());
+        System.out.println("RAIZ = "+raiz.getDato());
 
+        Nodo temp = raiz.getIzquierdo();
         //RAMA IZQUIERDA
         while(temp != null){
             System.out.println("Nivel = "+temp.getNivel());
             System.out.println("DATO = "+temp.getDato());
             temp = temp.getIzquierdo();
+        }
+
+        temp = raiz.getDerecho();
+         //RAMA DERECHA
+         while(temp != null){
+            System.out.println("Nivel = "+temp.getNivel());
+            System.out.println("DATO = "+temp.getDato());
+            temp = temp.getDerecho();
         }
     }
 
