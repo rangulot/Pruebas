@@ -9,7 +9,6 @@ public class Nodo {
 
     public Nodo(Object dato){
         this.dato = dato;
-        padre = null;
     }
 
     public Object getDato(){

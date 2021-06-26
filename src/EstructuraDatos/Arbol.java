@@ -9,6 +9,23 @@ public class Arbol {
         raiz = null;
     }
 
+    /*public void insertar(int nivel, Nodo nodo){
+        if(nivel == 0 && raiz == null){
+            raiz = nodo;
+        }else{
+            Nodo temp = raiz;
+            while(temp != null){
+                if(temp.getIzquierdo() == null){
+                    temp.setIzquierdo(nodo);
+                }
+                temp = temp.getIzquierdo();
+            }
+        }
+        cantidadVertices++;
+    }*/
+    
+
+
     public void insertar(int nivel, Nodo nodo){
         Nodo temp = raiz;
         if(raiz == null){
@@ -37,11 +54,11 @@ public class Arbol {
     }
 
     public void imprimir(){
-        System.out.println("NIVEL = "+raiz.getNivel());
-        System.out.println("RAIZ = "+raiz.getDato());
+        
 
-        Nodo temp = raiz.getIzquierdo();
+        Nodo temp = raiz;
         //RAMA IZQUIERDA
+        System.out.println("RAMA IZQUIERDA");
         while(temp != null){
             System.out.println("Nivel = "+temp.getNivel());
             System.out.println("DATO = "+temp.getDato());
@@ -50,6 +67,7 @@ public class Arbol {
 
         temp = raiz.getDerecho();
          //RAMA DERECHA
+         System.out.println("RAMA DERECHA");
          while(temp != null){
             System.out.println("Nivel = "+temp.getNivel());
             System.out.println("DATO = "+temp.getDato());
