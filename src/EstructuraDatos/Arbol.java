@@ -10,23 +10,25 @@ public class Arbol {
     }
 
     public void insertar(int nivel, Nodo nodo){
+        Nodo temp = raiz;
         if(raiz == null){
             raiz = nodo;
             raiz.setNivel(nivel);
             raiz.setPadre(null);
         }else{
-            Nodo temp = raiz;
             while(temp != null){
                 if(temp.getIzquierdo() == null){
                     nodo.setPadre(temp);
                     nodo.setNivel(nivel);
                     temp.setIzquierdo(nodo);
                     temp = temp.getIzquierdo();
-                }else{
+                    System.out.println("Izquierdo, Dato = "+ temp.getDato());
+                }else if(temp.getDerecho() == null){
                     nodo.setPadre(temp);
                     nodo.setNivel(nivel);
                     temp.setDerecho(nodo);
                     temp = temp.getDerecho();
+                    System.out.println("Derecho, Dato = "+ temp.getDato());
                 }
                 temp = temp.getIzquierdo();
             }
